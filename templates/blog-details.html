@@ -31,11 +31,9 @@
         <div class="col-lg-8">
             <div class="main_blog_details">
                 {% if post.image_url %}
-                <!-- Use static template tag -->
-                 <img class="img-fluid" src="{% static post.image_url %}" alt="">
+                  <img class="img-fluid" src="{% static post.image_url %}" alt="">
                 {% else %}
-                <!-- Use static template tag -->
-                 <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="">
+                  <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="">
                 {% endif %}
                 <a href="#"><h4>{{post.title}}</h4></a>
                 <div class="user_details">
@@ -67,20 +65,20 @@
                     <h4>{{ post.comments|length }} Comments</h4>
                     <!-- Render post from context -->
                     {% for comment in post.comments %}
-                    <div class="comment-list">
-                        <div class="single-comment justify-content-between d-flex">
-                            <div class="user justify-content-between d-flex">
-                                <div class="desc">
-                                    <h5><a href="#">{{comment.author}}</a></h5>
-                                    <p class="date">{{comment.published_at}}</p>
-                                    <p class="comment">{{comment.text}}</p>
-                                </div>
-                            </div>
-                            <div class="reply-btn">
-                                    <a href="" class="btn-reply text-uppercase">reply</a> 
-                            </div>
-                        </div>
-                    </div>
+                      <div class="comment-list">
+                          <div class="single-comment justify-content-between d-flex">
+                              <div class="user justify-content-between d-flex">
+                                  <div class="desc">
+                                      <h5><a href="#">{{comment.author}}</a></h5>
+                                      <p class="date">{{comment.published_at}}</p>
+                                      <p class="comment">{{comment.text}}</p>
+                                  </div>
+                              </div>
+                              <div class="reply-btn">
+                                  <a href="" class="btn-reply text-uppercase">reply</a>
+                              </div>
+                          </div>
+                      </div>
                     {% endfor %}
                 </div>
         </div>
